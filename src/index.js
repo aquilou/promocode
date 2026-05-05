@@ -9,6 +9,7 @@ const odooRoutes      = require('./routes/odoo');
 const codesRoutes     = require('./routes/codes');
 const profilesRoutes  = require('./routes/profiles');
 const campaignsRoutes = require('./routes/campaigns');
+const statsRoutes     = require('./routes/stats');
 
 const app  = express();
 const PORT = process.env.PORT || 3000;
@@ -26,6 +27,7 @@ app.use('/api/odoo',      odooRoutes);
 app.use('/api/codes',     codesRoutes);
 app.use('/api/profiles',  profilesRoutes);
 app.use('/api/campaigns', campaignsRoutes);
+app.use('/api/stats',     statsRoutes);
 
 app.use((err, req, res, _next) => {
   console.error(`[${req.method}] ${req.path}`, err.message);
